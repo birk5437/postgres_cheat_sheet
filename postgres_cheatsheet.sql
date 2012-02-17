@@ -10,21 +10,24 @@ SELECT column_name FROM information_schema.columns WHERE table_name = 'table_nam
 --List Foreign Key Tables (for "people" table in this example)
 SELECT table_name FROM information_schema.columns WHERE upper(column_name) = 'PERSON_ID'
 
+--Get next sequence value on an auto-increment sequence
+SELECT nextval('activity_types_id_seq'::regclass);
+
 --Access a database
 $> psql database_name
 
 --List databases
-\l
+SQL> \l
 
 --Describe a table
-\d+ table_name
+SQL> \d+ table_name
 
 --exit psql
-\q
+SQL> \q
 
 --show help
-\h
-\?
+SQL> \h
+SQL> \?
 
 --show psql version
 SELECT version();
